@@ -1,20 +1,21 @@
 export const categoryTypeDef = `
-  type Category {
+  type Report {
       id: Int!
-      name: String!
+      date: String!
+      routeid: Integer!
+      type: Boolean!
   }
-  input CategoryInput {
-      name: String!
-      description: String!
+  input ReportInput {
+      date: String!
+      routeid: Integer!
+      type: Boolean!
   }`;
 
 export const categoryQueries = `
-      allCategories: [Category]!
-      categoryById(id: Int!): Category!
+      allReports: [Report]!
+
   `;
 
 export const categoryMutations = `
-    createCategory(category: CategoryInput!): Category!
-    updateCategory(id: Int!, category: CategoryInput!): Category!
-    deleteCategory(id: Int!): Int
+    createReport(report: ReportInput!): Report!
 `;
